@@ -42,7 +42,7 @@ push-release:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         repository: $DOCKER_REGISTRY/$DOCKER_REPO
-        registry: http://$DOCKER_REGISTRY/v2
+        registry: https://$DOCKER_REGISTRY/v2
         tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
         ports: 8080
         cmd: npm start
