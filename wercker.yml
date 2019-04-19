@@ -46,3 +46,4 @@ push-release:
         tag: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
         ports: 8080
         cmd: npm start
+        insecure-registries : ["130.61.107.132:8083"]
