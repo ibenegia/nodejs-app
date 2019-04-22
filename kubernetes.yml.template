@@ -22,19 +22,3 @@ spec:
           protocol: TCP
       imagePullSecrets:
         - name: wercker
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: nodejs-app
-  labels:
-    app: nodejs-app
-    commit: ${WERCKER_GIT_COMMIT}
-spec:
-  ports:
-  - port: 3000
-  selector:
-    app: nodejs-app
-    color: green
-  type: ClusterIP
----
