@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: nodejs-app-v1
 spec:
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels: # labels to select/identify the deployment
