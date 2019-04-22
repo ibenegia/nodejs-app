@@ -13,4 +13,4 @@ spec:
       - name: nodejs-app 
         image: ${DOCKER_REGISTRY}/${DOCKER_REPO}:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT} # image we pushed
         ports:
-        - containerPort: 3000
+        - containerPort: 8080
