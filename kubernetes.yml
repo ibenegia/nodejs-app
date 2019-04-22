@@ -2,8 +2,6 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: nodejs-app-v2
-  labels:
-    commit: ${WERCKER_GIT_COMMIT}
 spec:
   replicas: 2
   selector:
@@ -13,7 +11,6 @@ spec:
     metadata:
       labels:
         app: nodejs-app
-        commit: ${WERCKER_GIT_COMMIT}
     spec:
       containers:
       - name: nodejs-app-container
