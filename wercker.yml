@@ -16,8 +16,10 @@ box: node
 
     # - mongo
     # https://devcenter.wercker.com/administration/services/examples/mongodb/
-  - internal/docker-build:
-      dockerfile: Dockerfile
+build:
+  steps:
+    - internal/docker-build:
+        dockerfile: Dockerfile
   
 
 #Push the docker image with our built and tested application to the Oracle Container Registry
