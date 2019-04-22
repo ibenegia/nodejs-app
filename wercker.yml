@@ -20,6 +20,7 @@ build:
   steps:
     - internal/docker-build:
         dockerfile: Dockerfile
+        image-name: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
   
 
 #Push the docker image with our built and tested application to the Oracle Container Registry
