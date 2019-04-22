@@ -16,7 +16,6 @@ box: node
 
     # - mongo
     # https://devcenter.wercker.com/administration/services/examples/mongodb/
-build:
   - internal/docker-build:
       dockerfile: Dockerfile
   
