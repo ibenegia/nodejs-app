@@ -1,45 +1,16 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: nodejs-app-v1
-  labels:
-    commit: ${WERCKER_GIT_COMMIT}
 spec:
   replicas: 2
-  selector:
-    matchLabels:
-      app: nodejs-app
   template:
     metadata:
-      labels:
-        app: nodejs-app
-        commit: ${WERCKER_GIT_COMMIT}
-        color: blue
-    spec:
-      containers:
-      - name: nodejs-app
-        image: ${DOCKER_REGISTRY}/${DOCKER_REPO}:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
-        imagePullPolicy: Always
+      labels: # labels to select/identify the deployment
+        app: nodejs-app  
+    spec:     # pod spec                  
+      containers: 
+      - name: nodejs-app 
+        image: ${DOCKER_REGISTRY}/${DOCKER_REPO}:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT} # image we pushed
         ports:
-        - name: nodejs-app
-          containerPort: 8080
-          protocol: TCP
-      imagePullSecrets:
-        - name: wercker
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: nodejs-app
-  labels:
-    app: nodejs-app
-    commit: ${WERCKER_GIT_COMMIT}
-spec:
-  ports:
-  - port: 30000
-    targetPort: 8080
-  selector:
-    app: nodejs-app
-    color: blu
-  type: ClusterIP
----
+        - containerPort: 3000
