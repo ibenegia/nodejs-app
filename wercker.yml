@@ -51,7 +51,6 @@ push-release:
 deploy-to-cluster:
   box:
       id: node
-      cmd: /bin/sh
 
   steps:
 
