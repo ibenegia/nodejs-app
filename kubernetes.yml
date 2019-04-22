@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nodejs-app-v2
+  labels:
+    commit: ${WERCKER_GIT_COMMIT}
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nodejs-app
+  template:
+    metadata:
+      labels:
+        app: nodejs-app
+        commit: ${WERCKER_GIT_COMMIT}
+    spec:
+      containers:
+      - name: nodejs-app-container
+        image: ${DOCKER_REGISTRY}/${DOCKER_REPO}:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
+        imagePullPolicy: Always
+        ports:
+        - name: pc-app-port
+          containerPort: 80
+          protocol: TCP
+      imagePullSecrets:
+        - name: wercker
