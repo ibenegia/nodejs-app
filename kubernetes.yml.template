@@ -33,7 +33,6 @@ metadata:
 spec:
   ports:
   - port: 3000
-    targetPort: 8080
   selector:
     app: nodejs-app
     color: green
