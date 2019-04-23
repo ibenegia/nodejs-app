@@ -22,14 +22,17 @@ build:
         dockerfile: Dockerfile
         image-name: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
         registry-auth-config: |
-                    {
-                        "docker-nexus.labgpi.it": {
-                            "username": "oracle.cloud",
-                            "password": "ivanbenegiamo"
-                        }
-                    }
+            {
+                "docker-nexus.labgpi.it": {
+                    "username": "oracle.cloud",
+                    "password": "ivanbenegiamo"
+                }
+            }
 #Deploy our container from the Oracle Container Registry to the Oracle Container Engine (Kubernetes)
 deploy-to-cluster:
+    box:
+      id: debian
+  steps:
 
   - bash-template
 
