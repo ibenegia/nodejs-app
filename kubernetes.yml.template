@@ -1,24 +1,24 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: nodejs-app-v2
+  name: genero-v1
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: nodejs-app
+      app: genero-app
   template:
     metadata:
       labels:
-        app: nodejs-app
+        app: genero-app
     spec:
       containers:
-      - name: nodejs-app-container
-        image:  ${DOCKER_REGISTRY}/${DOCKER_REPO}:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
+      - name: genero-app-container
+        image:  ${DOCKER_REGISTRY}/${DOCKER_REPO}:latest
         imagePullPolicy: Always
         ports:
         - name: pc-app-port
-          containerPort: 8080
+          containerPort: 6394
           protocol: TCP
       imagePullSecrets:
         - name: wercker
