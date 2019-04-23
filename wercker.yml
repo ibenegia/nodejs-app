@@ -31,7 +31,7 @@ build:
 #Deploy our container from the Oracle Container Registry to the Oracle Container Engine (Kubernetes)
 deploy-to-cluster:
    box:
-      id: node:8
+      id: debian
 
   steps:
 
