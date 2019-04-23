@@ -3,7 +3,7 @@
 # If you want Nodesource's container you would reference nodesource/node
 # Read more about containers on our dev center
 # https://devcenter.wercker.com/overview-and-core-concepts/containers/
-#box: node:8
+box: debian
 # This is the build pipeline. Pipelines are the core of wercker
 # Read more about pipelines on our dev center
 # https://devcenter.wercker.com/development/pipelines/
@@ -27,7 +27,8 @@ build:
 
 #Deploy our container from the Oracle Container Registry to the Oracle Container Engine (Kubernetes)
 deploy-to-cluster:
-
+ box:
+      id: debian
   steps:
 
   - bash-template
