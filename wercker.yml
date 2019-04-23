@@ -21,6 +21,13 @@ build:
     - internal/docker-build:
         dockerfile: Dockerfile
         image-name: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
+        registry-auth-config: |
+                    {
+                        "docker-nexus.labgpi.it": {
+                            "username": "oracle.cloud",
+                            "password": "ivanbenegiamo"
+                        }
+                    }
   
 
 
