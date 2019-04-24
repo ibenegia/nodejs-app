@@ -22,19 +22,3 @@ spec:
           protocol: TCP
       imagePullSecrets:
         - name: wercker
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: genero-app
-  labels:
-    app: genero-app
-    commit: ${WERCKER_GIT_COMMIT}
-spec:
-  ports:
-  - port: 6394
-  selector:
-    app: genero-app
-    color: green
-  type: ClusterIP
----
