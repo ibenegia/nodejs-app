@@ -29,6 +29,7 @@ metadata:
   name: genero-app
   labels:
     app: genero-app
+    commit: ${WERCKER_GIT_COMMIT}
 spec:
   ports:
   - port: 30000
@@ -36,5 +37,5 @@ spec:
   selector:
     app: genero-app
     color: green
-  type: LoadBalancer
+  type: ClusterIP
 ---
