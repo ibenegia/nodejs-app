@@ -36,5 +36,5 @@ spec:
   selector:
     app: genero-app
     color: green
-  type: LoadBalancer
+  type: ClusterIP
 ---
