@@ -29,7 +29,6 @@ metadata:
   name: genero-app
   labels:
     app: genero-app
-    commit: ${WERCKER_GIT_COMMIT}
 spec:
   ports:
   - port: 30000
