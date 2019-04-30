@@ -32,7 +32,8 @@ metadata:
     commit: ${WERCKER_GIT_COMMIT}
 spec:
   ports:
-  - port: 6394
+  - port: 30000
+    targetPort: 6394
   selector:
     app: genero-app
     color: green
