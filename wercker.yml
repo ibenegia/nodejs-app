@@ -21,6 +21,7 @@ build:
     - internal/docker-build:
         dockerfile: Dockerfile
         # image-name: $WERCKER_GIT_BRANCH-$WERCKER_GIT_COMMIT
+        image-name: ${DOCKER_REGISTRY}/${DOCKER_REPO}:latest
         registry-auth-config: |
             {
                 "docker-nexus.labgpi.it": {
